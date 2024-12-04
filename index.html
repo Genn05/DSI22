@@ -5,56 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Système Solaire</title>
     <link rel="stylesheet" href="index.css">
-    
 </head>
 <body>
-    <header>
-        <div class="header-content"></div>
-        <h1>Système Solaire</h1>
-        <button id="theme-toggle" aria-label="Basculer entre le mode sombre et clair">🌙 Mode Sombre</button>
+    <!-- Vidéo de fond -->
+    <div class="video-background">
+        <video autoplay loop muted>
+            <source src="SystèmeSolaire.mp4" type="video/mp4">
+            Votre navigateur ne prend pas en charge la vidéo HTML5.
+        </video>
     </div>
-        <nav>
-            <a href="index.html">Accueil</a>
-            <a href="planetes.html">Planètes</a>
-            <a href="education.html">Quiz</a>
-            <a href="login.html">Login</a>
-            <a href="admin.html">Administration</a>
-            <a href="news.html">News</a>
-            <a href="signup.html">Signup</a>
-        </nav>
+
+    <!-- Header avec liens -->
+    <header>
+        <div class="header-content">
+            <h1>Système Solaire</h1>
+            <button id="theme-toggle" aria-label="Basculer entre le mode sombre et clair">🌙 Mode Sombre</button>
+
+            <nav>
+                <a href="index.html">Accueil</a>
+                <a href="planetes.html">Planètes</a>
+                <a href="education.html">Quiz</a>
+                <a href="login.html">Login</a>
+                <a href="admin.html">Administration</a>
+                <a href="news.html">News</a>
+                <a href="signup.html">Signup</a>
+            </nav>
+        </div>
     </header>
     
     <div class="container">
         <h2>Explorez notre système solaire</h2>
         <div class="solar-system">
             <!-- Soleil -->
-            <div class="sun" aria-label="Soleil"></div>
+            <div class="sun"></div>
 
-            <!-- Planètes -->
-            <div class="orbit mercury" aria-label="Mercure">
-                <div class="planet mercury">
-                    <img src="images/mecury.jpg" alt="Mercure">
-                </div>
+            <!-- Orbites des planètes -->
+            <div class="orbit mercury">
+                <div class="planet mercury"></div>
             </div>
-            <div class="orbit venus" aria-label="Vénus">
-                <div class="planet venus">
-                    <img src="images/venus.jpg" alt="Vénus">
-                </div>
+            <div class="orbit venus">
+                <div class="planet venus"></div>
             </div>
-            <div class="orbit earth" aria-label="Terre">
-                <div class="planet earth">
-                    <img src="images/earth.jpg" alt="Terre">
-                </div>
+            <div class="orbit earth">
+                <div class="planet earth"></div>
             </div>
-            <div class="orbit mars" aria-label="Mars">
-                <div class="planet mars">
-                    <img src="images/mars.jpg" alt="Mars">
-                </div>
+            <div class="orbit mars">
+                <div class="planet mars"></div>
             </div>
-            <div class="orbit jupiter" aria-label="Jupiter">
-                <div class="planet jupiter">
-                    <img src="images/jupiter.jpg" alt="Jupiter">
-                </div>
+            <div class="orbit jupiter">
+                <div class="planet jupiter"></div>
             </div>
         </div>
     </div>

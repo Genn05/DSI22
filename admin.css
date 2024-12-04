@@ -1,0 +1,359 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* Fond sombre par défaut */
+    color: #ffffff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header {
+    background-color: #212121;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+header h1 {
+    color: #FFAA00;
+    font-size: 2rem;
+}
+
+header nav {
+    margin-top: 10px;
+}
+
+header nav a {
+    color: #FFAA00;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: #ffffff;
+}
+
+header button {
+    background-color: transparent;
+    color: #FFAA00;
+    border: 2px solid #FFAA00;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+header button:hover {
+    background-color: #FFAA00;
+    color: #121212;
+}
+
+/* Solar System Styles */
+.container {
+    text-align: center;
+    padding: 40px;
+}
+
+.solar-system {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin: 50px auto;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+/* Sun */
+.sun {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    background-color: #FFAA00;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 50px #FFAA00;
+}
+
+/* Orbits */
+.orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 1px dashed rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    animation: rotate-orbit linear infinite;
+    transform: translate(-50%, -50%);
+}
+
+.orbit.mercury {
+    width: 150px;
+    height: 150px;
+    animation-duration: 4s;
+}
+
+.orbit.venus {
+    width: 200px;
+    height: 200px;
+    animation-duration: 6s;
+}
+
+.orbit.earth {
+    width: 250px;
+    height: 250px;
+    animation-duration: 8s;
+}
+
+.orbit.mars {
+    width: 300px;
+    height: 300px;
+    animation-duration: 10s;
+}
+
+.orbit.jupiter {
+    width: 350px;
+    height: 350px;
+    animation-duration: 12s;
+}
+
+/* Planets */
+.planet {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    transform: translate(-50%, -50%);
+    animation: orbit linear infinite;
+}
+
+.planet img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+/* Animations */
+@keyframes rotate-orbit {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes orbit {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(-360deg);
+    }
+}
+
+/* Light Theme */
+body.light-theme {
+    background-color: #f9f9f9;
+    color: #121212;
+}
+
+body.light-theme header {
+    background-color: #ffffff;
+}
+
+body.light-theme .sun {
+    background-color: #FFDD44;
+    box-shadow: 0 0 40px #FFDD44;
+}
+
+body.light-theme nav a {
+    color: #FFDD44;
+}
+
+body.light-theme header button {
+    color: #FFDD44;
+    border-color: #FFDD44;
+}
+
+body.light-theme header button:hover {
+    background-color: #050c11;
+    color: #ffffff;
+}
+/* Styles globaux */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Section Admin */
+.admin-section {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Titre Section */
+.admin-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Bouton Ajouter Utilisateur */
+.add-button {
+    background-color: #FFAA00;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+    background-color: #e89400;
+}
+
+/* Formulaire pour ajouter un utilisateur */
+#user-form-container {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#user-form h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#user-form label {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    display: block;
+    color: #333;
+}
+
+#user-form input,
+#user-form select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#user-form input:focus,
+#user-form select:focus {
+    border-color: #FFAA00;
+    outline: none;
+}
+
+/* Table des utilisateurs */
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.user-table th,
+.user-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.user-table th {
+    background-color: #FFAA00;
+    color: white;
+}
+
+.user-table td {
+    background-color: #f9f9f9;
+}
+
+.user-table tr:nth-child(even) td {
+    background-color: #f1f1f1;
+}
+
+.user-table .edit-button,
+.user-table .delete-button {
+    background-color: transparent;
+    border: 2px solid #FFAA00;
+    color: #FFAA00;
+    padding: 8px 16px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    margin-right: 10px;
+}
+
+.user-table .edit-button:hover {
+    background-color: #FFAA00;
+    color: white;
+}
+
+.user-table .delete-button:hover {
+    background-color: #FFAA00;
+    color: white;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 1rem;
+    color: #666;
+    padding: 10px;
+    background-color: #212121;
+    color: white;
+    border-top: 3px solid #FFAA00;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
+    .admin-section {
+        padding: 10px;
+    }
+
+    .user-table th, .user-table td {
+        padding: 8px;
+    }
+
+    .add-button {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    #user-form input,
+    #user-form select {
+        font-size: 0.9rem;
+    }
+}
+

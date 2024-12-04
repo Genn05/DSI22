@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recherche de Planètes</title>
+  <link rel="stylesheet" href="planetes.css">
+  
+</head>
+<body>
+    
+  <header>
+      <div class="header-content"></div>
+      <h1>Système Solaire</h1>
+      <button id="theme-toggle" aria-label="Basculer entre le mode sombre et clair">🌙 Mode Sombre</button>
+  </div>
+      <nav>
+          <a href="index.html">Accueil</a>
+          <a href="planetes.html">Planètes</a>
+          <a href="education.html">Quiz</a>
+          <a href="login.html">Login</a>
+          <a href="admin.html">Administration</a>
+          <a href="news.html">News</a>
+          <a href="signup.html">Signup</a>
+      </nav>
+</header>
+<h2>Recherche de Planètes</h2>
+  <main>
+    <form id="planetForm">
+      <input type="text" id="planetName" placeholder="Entrez le nom de la planète" required>
+      <button type="submit">Rechercher</button>
+    </form>
+    <div class="result" id="result">
+      <!-- Résultats affichés ici -->
+    </div>
+  </main>
+
+<div class="intro">
+    <p>Le système solaire est un ensemble d'objets célestes composé du Soleil et des corps qui gravitent autour de lui, 
+    notamment les planètes, les lunes, les astéroïdes et les comètes. Il est situé dans la Voie lactée, une vaste galaxie 
+    regroupant des milliards d'étoiles. si vouz pouvez voir plus des details <a href="details.html">cliques ici </a></p>
+</div>
+
+<div class="container">
+
+    <!-- Planète : Mercure -->
+    <div class="planet">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Mercury_in_color_-_Prockter07_centered.jpg/200px-Mercury_in_color_-_Prockter07_centered.jpg" alt="Mercure">
+        <h3>Mercure</h3>
+        <p>La planète la plus proche du Soleil et la plus petite du système solaire.</p>
+    </div>
+
+    <!-- Planète : Vénus -->
+    <div class="planet">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Venus-real_color.jpg" alt="Vénus">
+        <h3>Vénus</h3>
+        <p>Surnommée l'étoile du berger, avec une atmosphère très dense et chaude.</p>
+    </div>
+
+    <!-- Planète : Terre -->
+    <div class="planet">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg" alt="Terre">
+        <h3>Terre</h3>
+        <p>La seule planète connue pour abriter la vie.</p>
+    </div>
+
+    <!-- Planète : Mars -->
+    <div class="planet">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/02/OSIRIS_Mars_true_color.jpg" alt="Mars">
+        <h3>Mars</h3>
+        <p>Connue sous le nom de planète rouge, elle abrite le plus haut volcan du système solaire.</p>
+    </div>
+
+    <!-- Planète : Jupiter -->
+    <div class="planet">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Jupiter.jpg" alt="Jupiter">
+        <h3>Jupiter</h3>
+        <p>La plus grande planète, célèbre pour sa Grande Tache Rouge.</p>
+    </div>
+
+    <!-- Planète : Saturne -->
+    <div class="planet">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Saturn_during_Equinox.jpg" alt="Saturne">
+        <h3>Saturne</h3>
+        <p>Célèbre pour ses magnifiques anneaux de glace et de roche.</p>
+    </div>
+
+    <!-- Planète : Uranus -->
+    <div class="planet">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Uranus2.jpg" alt="Uranus">
+        <h3>Uranus</h3>
+        <p>Une planète glacée qui tourne sur le côté.</p>
+    </div>
+
+    <!-- Planète : Neptune -->
+    <div class="planet">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/56/Neptune_Full.jpg" alt="Neptune">
+        <h3>Neptune</h3>
+        <p>La planète la plus éloignée, connue pour ses vents violents.</p>
+    </div>
+</div>
+
+
+
+  <footer>
+    <p>© 2024 Exploration du Système Solaire. Tous droits réservés.</p>
+</footer>
+  <script>
+    const planets = {
+      Mercure: {
+        image: "https://upload.wikimedia.org/wikipedia/commons/4/4a/Mercury_in_true_color.jpg",
+        description: "Mercure est la planète la plus proche du Soleil et la plus petite du système solaire."
+      },
+      Vénus: {
+        image: "https://upload.wikimedia.org/wikipedia/commons/e/e5/Venus-real_color.jpg",
+        description: "Vénus est connue pour son atmosphère dense et son effet de serre extrême."
+      },
+      Terre: {
+        image: "https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg",
+        description: "La Terre est la seule planète connue pour abriter la vie."
+      },
+      Mars: {
+        image: "https://upload.wikimedia.org/wikipedia/commons/0/02/OSIRIS_Mars_true_color.jpg",
+        description: "Mars, surnommée la planète rouge, est célèbre pour ses paysages désertiques et ses tempêtes de poussière."
+      },
+      Jupiter: {
+        image: "https://upload.wikimedia.org/wikipedia/commons/e/e2/Jupiter.jpg",
+        description: "Jupiter est la plus grande planète du système solaire et possède une Grande Tache Rouge emblématique."
+      },
+      Saturne: {
+        image: "https://upload.wikimedia.org/wikipedia/commons/c/c7/Saturn_during_Equinox.jpg",
+        description: "Saturne est célèbre pour ses anneaux spectaculaires composés de glace et de roche."
+      },
+      Uranus: {
+        image: "https://upload.wikimedia.org/wikipedia/commons/3/3d/Uranus2.jpg",
+        description: "Uranus est une planète glacée avec une rotation inclinée unique."
+      },
+      Neptune: {
+        image: "https://upload.wikimedia.org/wikipedia/commons/5/56/Neptune_Full.jpg",
+        description: "Neptune est la planète la plus éloignée du Soleil et connue pour ses vents violents."
+      }
+    };
+
+    document.getElementById("planetForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const planetName = document.getElementById("planetName").value.trim();
+      const resultDiv = document.getElementById("result");
+
+      if (planets[planetName]) {
+        const planet = planets[planetName];
+        resultDiv.innerHTML = `
+          <h2>${planetName}</h2>
+          <img src="${planet.image}" alt="Image de ${planetName}" class="planet-img">
+          <p>${planet.description}</p>
+        `;
+      } else {
+        resultDiv.innerHTML = "<p style='color: red;'>Planète introuvable. Assurez-vous d'entrer un nom valide.</p>";
+      }
+    }); 
+    // Gérer le changement de thème (mode clair/sombre)
+        document.getElementById('theme-toggle').addEventListener('click', function() {
+            document.body.classList.toggle('light-theme');
+            
+            // Changer le texte du bouton selon le thème actif
+            if (document.body.classList.contains('light-theme')) {
+                document.getElementById('theme-toggle').textContent = '🌙 Mode Sombre';
+            } else {
+                document.getElementById('theme-toggle').textContent = '☀️ Mode Clair';
+            }
+        });
+  </script>
+</body>
+</html>
