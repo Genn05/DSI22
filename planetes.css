@@ -1,0 +1,150 @@
+
+  /* Base */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* Fond sombre par défaut */
+    color: #FFAA00; /* Texte jaune vif */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Header */
+header {
+    background-color: #000000; /* Fond noir */
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+header h1 {
+    color: #FFAA00; /* Titre jaune */
+    font-size: 2rem;
+}
+
+header button {
+    background-color: transparent;
+    color: #FFAA00;
+    border: 2px solid #FFAA00;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header button:hover {
+    background-color: #FFAA00;
+    color: #121212;
+}
+
+/* Navigation */
+header nav a {
+    color: #FFAA00;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: #fff;
+}
+
+/* Main Content */
+main {
+    padding: 30px 20px;
+    background-color: #181818;
+}
+
+.intro {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+/* Planet Cards */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 30px auto;
+    max-width: 1200px;
+}
+
+.planet {
+    background-color: #222;
+    border: 2px solid #FFAA00;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.planet:hover {
+    transform: scale(1.05);
+    background-color: #333;
+}
+
+.planet img {
+    border-radius: 50%;
+    border: 2px solid #FFAA00;
+    max-width: 150px;
+    margin-bottom: 15px;
+}
+
+.planet h3 {
+    color: #FFAA00;
+    margin-bottom: 10px;
+}
+
+.planet p {
+    font-size: 1rem;
+    color: #FFAA00;
+}
+
+/* Footer */
+footer {
+    background-color: #000000;
+    color: #FFAA00;
+    padding: 15px 0;
+    text-align: center;
+}
+
+/* Light Theme */
+body.light-theme {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+body.light-theme header {
+    background-color: #F1F1F1;
+}
+
+body.light-theme header button {
+    background-color: #FFAA00;
+    color: #121212;
+}
+
+body.light-theme header button:hover {
+    background-color: #000000;
+    color: #FFAA00;
+}
+
+body.light-theme nav a {
+    color: #121212;
+}
+
+body.light-theme .planet {
+    background-color: #FFFAE6;
+    border-color: #000000;
+}
+
+body.light-theme footer {
+    background-color: #F1F1F1;
+    color: #121212;
+}
