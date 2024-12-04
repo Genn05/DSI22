@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription - Explorez le Système Solaire</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="signup.css">
+ 
+</head>
+<body>
+    <header>
+        <div class="header-content"></div>
+        <h1>Système Solaire</h1>
+        <button id="theme-toggle" aria-label="Basculer entre le mode sombre et clair">🌙 Mode Sombre</button>
+    </div>
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="planetes.html">Planètes</a>
+            <a href="education.html">Quiz</a>
+            <a href="login.html">Login</a>
+            <a href="admin.html">Administration</a>
+            <a href="news.html">News</a>
+            <a href="signup.html">Signup</a>
+        </nav>
+    </header>
+
+    <div class="background">
+        <div class="container">
+            <h1>Inscription - Explorez le Système Solaire</h1>
+            <form action="/submit-signup" method="POST">
+                <label for="username">Nom d'utilisateur</label>
+                <input type="text" id="username" name="username" required placeholder="Entrez votre nom d'utilisateur">
+
+                <label for="email">Adresse e-mail</label>
+                <input type="email" id="email" name="email" required placeholder="Entrez votre adresse e-mail">
+
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" name="password" required placeholder="Entrez un mot de passe">
+
+                <label for="confirm-password">Confirmer le mot de passe</label>
+                <input type="password" id="confirm-password" name="confirm-password" required placeholder="Confirmer le mot de passe">
+
+                <label for="favorite-planet">Planète préférée</label>
+                <select id="favorite-planet" name="favorite-planet" required>
+                    <option value="mercury">Mercure</option>
+                    <option value="venus">Vénus</option>
+                    <option value="earth">Terre</option>
+                    <option value="mars">Mars</option>
+                    <option value="jupiter">Jupiter</option>
+                    <option value="saturn">Saturne</option>
+                    <option value="uranus">Uranus</option>
+                    <option value="neptune">Neptune</option>
+                </select>
+
+                <label for="terms">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    J'accepte les <a href="/terms-and-conditions">conditions d'utilisation</a>
+                </label>
+
+                <button type="submit">S'inscrire</button>
+            </form>
+            <p>Vous avez déjà un compte ? <a href="/login">Se connecter</a></p>
+
+        
+
+        </div>
+    </div>
+    <script> // Gérer le changement de thème (mode clair/sombre)
+        document.getElementById('theme-toggle').addEventListener('click', function() {
+            document.body.classList.toggle('light-theme');
+            
+            // Changer le texte du bouton selon le thème actif
+            if (document.body.classList.contains('light-theme')) {
+                document.getElementById('theme-toggle').textContent = '🌙 Mode Sombre';
+            } else {
+                document.getElementById('theme-toggle').textContent = '☀️ Mode Clair';
+            }
+        });</script>
+  
+    
+</body>
+</html>
