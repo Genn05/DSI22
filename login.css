@@ -1,0 +1,250 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* Fond sombre par défaut */
+    color: #ffffff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header {
+    background-color: #212121;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+header h1 {
+    color: #FFAA00;
+    font-size: 2rem;
+}
+
+header nav {
+    margin-top: 10px;
+}
+
+header nav a {
+    color: #FFAA00;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: #ffffff;
+}
+
+header button {
+    background-color: transparent;
+    color: #FFAA00;
+    border: 2px solid #FFAA00;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+header button:hover {
+    background-color: #FFAA00;
+    color: #121212;
+}
+
+/* Solar System Styles */
+.container {
+    text-align: center;
+    padding: 40px;
+}
+
+.solar-system {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin: 50px auto;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+/* Sun */
+.sun {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    background-color: #FFAA00;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 50px #FFAA00;
+}
+
+/* Orbits */
+.orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 1px dashed rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    animation: rotate-orbit linear infinite;
+    transform: translate(-50%, -50%);
+}
+
+.orbit.mercury {
+    width: 150px;
+    height: 150px;
+    animation-duration: 4s;
+}
+
+.orbit.venus {
+    width: 200px;
+    height: 200px;
+    animation-duration: 6s;
+}
+
+.orbit.earth {
+    width: 250px;
+    height: 250px;
+    animation-duration: 8s;
+}
+
+.orbit.mars {
+    width: 300px;
+    height: 300px;
+    animation-duration: 10s;
+}
+
+.orbit.jupiter {
+    width: 350px;
+    height: 350px;
+    animation-duration: 12s;
+}
+
+/* Planets */
+.planet {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    transform: translate(-50%, -50%);
+    animation: orbit linear infinite;
+}
+
+.planet img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+/* Animations */
+@keyframes rotate-orbit {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes orbit {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(-360deg);
+    }
+}
+
+/* Light Theme */
+body.light-theme {
+    background-color: #f9f9f9;
+    color: #121212;
+}
+
+body.light-theme header {
+    background-color: #ffffff;
+}
+
+body.light-theme .sun {
+    background-color: #FFDD44;
+    box-shadow: 0 0 40px #FFDD44;
+}
+
+body.light-theme nav a {
+    color: #FFDD44;
+}
+
+body.light-theme header button {
+    color: #FFDD44;
+    border-color: #FFDD44;
+}
+
+body.light-theme header button:hover {
+    background-color: #050c11;
+    color: #ffffff;
+}
+/* Login Container Styles */
+.login-container {
+    background-color: #212121; /* خلفية داكنة */
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    width: 320px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.login-container h1 {
+    color: #FFAA00; /* لون النص */
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.login-container input {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #444444; /* لون الحدود */
+    border-radius: 5px;
+    background-color: #121212; /* خلفية الحقل */
+    color: #ffffff; /* لون النص */
+    font-size: 1rem;
+}
+
+.login-container input::placeholder {
+    color: #bbbbbb; /* لون النص الافتراضي */
+}
+
+.login-container button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background-color: #FFAA00; /* خلفية الزر */
+    color: #121212; /* لون النص */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.login-container button:hover {
+    background-color: #ffffff; /* تأثير تمرير */
+    color: #121212;
+}
+
+.login-container a {
+    display: block; /* عرض الرابط في سطر منفصل */
+    margin-top: 15px;
+    color: #FFAA00;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.login-container a:hover {
+    color: #ffffff; /* تأثير تمرير */
+}
