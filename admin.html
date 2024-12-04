@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <header>
+        <div class="header-content"></div>
+        <h1>Système Solaire</h1>
+        <button id="theme-toggle" aria-label="Basculer entre le mode sombre et clair">🌙 Mode Sombre</button>
+    </div>
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="planetes.html">Planètes</a>
+            <a href="education.html">Quiz</a>
+            <a href="login.html">Login</a>
+            <a href="admin.html">Administration</a>
+            <a href="news.html">News</a>
+            <a href="signup.html">Signup</a>
+        </nav>
+    </header>
+
+
+
+
+  
+    <main>
+        <section class="admin-section">
+            <h2>Liste des Utilisateurs</h2>
+            <button class="add-button" id="add-user">Ajouter un Utilisateur</button>
+
+            <!-- Formulaire caché pour ajouter un utilisateur -->
+            <div id="user-form-container" style="display: none;">
+                <form id="user-form">
+                    <h3>Ajouter un Utilisateur</h3>
+                    <label for="username">Nom d'utilisateur:</label>
+                    <input type="text" id="username" name="username" placeholder="Entrez le nom d'utilisateur" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Entrez l'email" required>
+                    <label for="role">Rôle:</label>
+                    <select id="role" name="role" required>
+                        <option value="Admin">Admin</option>
+                        <option value="Utilisateur">Utilisateur</option>
+                    </select>
+                    <button type="submit" class="add-button">Ajouter</button>
+                </form>
+            </div>
+
+            <table class="user-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nom d'Utilisateur</th>
+                        <th>Email</th>
+                        <th>Rôle</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="user-list">
+                    <tr>
+                        <td>1</td>
+                        <td>Utilisateur1</td>
+                        <td>user1@example.com</td>
+                        <td>Admin</td>
+                        <td>
+                            <button class="edit-button">Modifier</button>
+                            <button class="delete-button">Supprimer</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Utilisateur2</td>
+                        <td>user2@example.com</td>
+                        <td>Utilisateur</td>
+                        <td>
+                            <button class="edit-button">Modifier</button>
+                            <button class="delete-button">Supprimer</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Système Solaire. Tous droits réservés.</p>
+    </footer>
+    <script> // Gérer le changement de thème (mode clair/sombre)
+        document.getElementById('theme-toggle').addEventListener('click', function() {
+            document.body.classList.toggle('light-theme');
+            
+            // Changer le texte du bouton selon le thème actif
+            if (document.body.classList.contains('light-theme')) {
+                document.getElementById('theme-toggle').textContent = '🌙 Mode Sombre';
+            } else {
+                document.getElementById('theme-toggle').textContent = '☀️ Mode Clair';
+            }
+        });
+        
+        const addUserButton = document.getElementById('add-user');
+        const userFormContainer = document.getElementById('user-form-container');
+        const userForm = document.getElementById('user-form');
+        const userList = document.getElementById('user-list');
+        let userId = 3; // ID utilisateur initial suivant
+
+        // Afficher/Cacher le formulaire d'ajout
+        addUserButton.addEventListener('click', () => {
+            userFormContainer.style.display = userFormContainer.style.display === 'none' ? 'block' : 'none';
+        });
+
+        // Ajouter un nouvel utilisateur
+        userForm.addEventListener('submit', (event) => {
+            event.preventDefault(); // Empêcher le rechargement de la page
+
+            // Récupérer les données du formulaire
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const role = document.getElementById('role').value;
+
+            // Créer une nouvelle ligne pour le tableau
+            const newRow = document.createElement('tr');
+            newRow.innerHTML = `
+                <td>${userId++}</td>
+                <td>${username}</td>
+                <td>${email}</td>
+                <td>${role}</td>
+                <td>
+                    <button class="edit-button">Modifier</button>
+                    <button class="delete-button">Supprimer</button>
+                </td>
+            `;
+
+            // Ajouter la nouvelle ligne au tableau
+            userList.appendChild(newRow);
+
+            // Réinitialiser le formulaire
+            userForm.reset();
+            userFormContainer.style.display = 'none';
+
+            // Ajouter les événements de suppression/modification
+            addEventListenersToButtons(newRow);
+        });
+
+        // Ajouter les événements de suppression/modification
+        function addEventListenersToButtons(row) {
+            const deleteButton = row.querySelector('.delete-button');
+            const editButton = row.querySelector('.edit-button');
+
+            deleteButton.addEventListener('click', () => {
+                row.remove();
+                alert("Utilisateur supprimé avec succès !");
+            });
+
+            editButton.addEventListener('click', () => {
+                alert("Fonctionnalité de modification en cours d'implémentation !");
+            });
+        }
+        
+        </script>
+</body>
+</html>
