@@ -1,0 +1,180 @@
+/* Global Styles */
+body {
+    font-family: 'arial',sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* Fond sombre */
+    color: #fff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Header */
+header {
+    background-color: #212121; /* Fond sombre du header */
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+header h1 {
+    color: #FFAA00; /* Jaune vif pour attirer l'attention */
+    font-size: 2.5rem;
+    font-family: 'arial', sans-serif;
+}
+
+header nav {
+    margin-top: 10px;
+}
+
+header nav a {
+    color: #FFAA00;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: #FFAA00;
+}
+
+/* Form Container */
+.background {
+    background: url('https://via.placeholder.com/') no-repeat center center fixed;
+    background-size: cover;
+    padding: 50px 0;
+}
+
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.7); /* Fond semi-transparent */
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    color: #FFAA00;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    color: #ccc;
+    margin-bottom: 8px;
+}
+
+form input,
+form select {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #222;
+    color: #fff;
+    font-size: 1rem;
+}
+
+form input:focus,
+form select:focus {
+    outline: none;
+    border-color: #FFAA00;
+}
+
+form button {
+    background-color: #FFAA00;
+    color: #121212;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #e68900;
+}
+
+form p {
+    text-align: center;
+    color: #bbb;
+}
+
+form a {
+    color: #FFAA00;
+    text-decoration: none;
+}
+
+form a:hover {
+    color: #e68900;
+}
+
+/* Toggle Button */
+#toggle-theme {
+    background-color: transparent;
+    border: 2px solid #FFAA00;
+    color: #FFAA00;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#toggle-theme:hover {
+    background-color: #FFAA00;
+    color: #121212;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        padding: 30px 20px;
+    }
+}
+
+/* Light Theme */
+body.light-theme {
+    background-color: #fff;
+    color: #121212;
+}
+
+body.light-theme header {
+    background-color: #FFFAF0; /* Fond clair pour l'en-tête */
+}
+
+body.light-theme .container {
+    background-color: #f9f9f9; /* Fond clair pour la zone de formulaire */
+    color: #121212;
+}
+
+body.light-theme .container label,
+body.light-theme .container input,
+body.light-theme .container select,
+body.light-theme .container button {
+    color: #121212;
+}
+
+body.light-theme header h1 {
+    color: #071a2d; /* Bleu foncé pour le titre */
+}
+
+body.light-theme #toggle-theme {
+    border-color: #5e666f;
+    color: #5e666f;
+}
+
+body.light-theme #toggle-theme:hover {
+    background-color: #FFAA00;
+    color: #121212;
+}

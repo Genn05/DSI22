@@ -1,0 +1,204 @@
+
+ /* Mode sombre (par défaut) */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #000000; /* Fond noir */
+    color: #FFEA00; /* Texte jaune */
+    overflow: hidden;
+    min-height: 100vh;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Mode clair */
+body.light-theme {
+    background: #FFFFFF; /* Fond blanc */
+    color: #000000; /* Texte noir */
+}
+
+/* Arrière-plan étoilé */
+.stars {
+    width: 100%;
+    height: 100%;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/7/76/Stars_background.png') repeat;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0.2; /* Légère transparence */
+}
+
+body.light-theme .stars {
+    display: none; /* Désactive les étoiles en mode clair */
+}
+
+/* Conteneur principal */
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 0 20px #FFEA00;
+    text-align: center;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+body.light-theme .container {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 20px #000000;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #FFEA00; /* Titre jaune */
+    text-shadow: 0 0 10px #FFEA00, 0 0 20px #FFEA00;
+    transition: color 0.3s;
+}
+
+body.light-theme h1 {
+    color: #000000; /* Titre noir */
+    text-shadow: none;
+}
+
+/* Planètes flottantes */
+.planet {
+    width: 50px;
+    height: 50px;
+    background: #FFEA00;
+    border-radius: 50%;
+    position: absolute;
+    animation: float 5s infinite;
+    box-shadow: 0 0 15px #FFEA00;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+body.light-theme .planet {
+    background: #000000;
+    box-shadow: 0 0 15px #000000;
+}
+
+/* Animation de flottement */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+.question {
+    font-size: 1.2em;
+    margin: 20px 0;
+    color: #FFEA00;
+    transition: color 0.3s;
+}
+
+body.light-theme .question {
+    color: #000000;
+}
+
+.answers button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    background: #000000;
+    color: #FFEA00;
+    border: 2px solid #FFEA00;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    width: 80%;
+    transition: transform 0.2s, background 0.3s, color 0.3s, border 0.3s;
+}
+
+body.light-theme .answers button {
+    background: #e9db1a;
+    color: #000000;
+    border: 2px solid #000000;
+}
+
+.answers button:hover {
+    background: #FFEA00;
+    color: #000000;
+    transform: scale(1.1);
+}
+
+.result {
+    font-size: 1.5em;
+    margin-top: 20px;
+    color: #FFEA00;
+    text-shadow: 0 0 5px #FFEA00, 0 0 15px #FFEA00;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+body.light-theme .result {
+    color: #000000;
+    text-shadow: none;
+}
+
+.restart button {
+    padding: 10px 20px;
+    background: #000000;
+    color: #FFEA00;
+    border: 2px solid #FFEA00;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: transform 0.2s, background 0.3s, color 0.3s, border 0.3s;
+}
+
+body.light-theme .restart button {
+    background: #FFFFFF;
+    color: #000000;
+    border: 2px solid #000000;
+}
+
+.restart button:hover {
+    background: #FFEA00;
+    color: #000000;
+    transform: scale(1.1);
+}
+
+/* Header */
+header {
+    background-color: #000000; /* Fond noir */
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+header h1 {
+    color: #FFAA00; /* Titre jaune */
+    font-size: 2rem;
+}
+
+header button {
+    background-color: transparent;
+    color: #FFAA00;
+    border: 2px solid #FFAA00;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header button:hover {
+    background-color: #FFAA00;
+    color: #121212;
+}
+
+/* Navigation */
+header nav a {
+    color: #FFAA00;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: #fff;
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="education.css">
+    <title>Quiz : Système Solaire</title>
+    
+</head>
+<body>
+    <header>
+        <div class="header-content"></div>
+        <h1>Système Solaire</h1>
+        <button id="theme-toggle" aria-label="Basculer entre le mode sombre et clair">🌙 Mode Sombre</button>
+    </div>
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="planetes.html">Planètes</a>
+            <a href="education.html">Quiz</a>
+            <a href="login.html">Login</a>
+            <a href="admin.html">Administration</a>
+            <a href="news.html">News</a>
+            <a href="signup.html">Signup</a>
+        </nav>
+  </header>
+    <div class="stars"></div>
+    <!-- Planètes décoratives -->
+    <div class="planet"></div>
+    <div class="planet"></div>
+    <div class="planet"></div>
+
+    <div class="container">
+        <h1>Quiz : Système Solaire</h1>
+        <div id="quiz">
+            <div class="question" id="question">Question text here</div>
+            <div class="answers" id="answers"></div>
+        </div>
+        <div class="result" id="result" style="display: none;">Votre score : <span id="score"></span>/5</div>
+        <div class="restart" id="restart" style="display: none;">
+            <button onclick="startQuiz()">Rejouer</button>
+        </div>
+    </div>
+
+    <script>
+        const questions = [
+            {
+                question: "Quelle est la plus grande planète du système solaire ?",
+                answers: ["Terre", "Jupiter", "Saturne", "Mars"],
+                correct: 1
+            },
+            {
+                question: "Quelle planète est la plus proche du Soleil ?",
+                answers: ["Mercure", "Vénus", "Mars", "Terre"],
+                correct: 0
+            },
+            {
+                question: "Quelle planète est connue comme la planète rouge ?",
+                answers: ["Jupiter", "Vénus", "Mars", "Neptune"],
+                correct: 2
+            },
+            {
+                question: "Combien de planètes composent le système solaire ?",
+                answers: ["7", "8", "9", "10"],
+                correct: 1
+            },
+            {
+                question: "Quelle planète possède des anneaux spectaculaires ?",
+                answers: ["Uranus", "Saturne", "Neptune", "Jupiter"],
+                correct: 1
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+
+        function startQuiz() {
+            currentQuestionIndex = 0;
+            score = 0;
+            document.getElementById("result").style.display = "none";
+            document.getElementById("restart").style.display = "none";
+            document.getElementById("quiz").style.display = "block";
+            showQuestion();
+        }
+
+        function showQuestion() {
+            const questionElement = document.getElementById("question");
+            const answersElement = document.getElementById("answers");
+
+            questionElement.textContent = questions[currentQuestionIndex].question;
+            answersElement.innerHTML = "";
+
+            questions[currentQuestionIndex].answers.forEach((answer, index) => {
+                const button = document.createElement("button");
+                button.textContent = answer;
+                button.onclick = () => checkAnswer(index);
+                answersElement.appendChild(button);
+            });
+        }
+
+        function checkAnswer(selectedIndex) {
+            if (selectedIndex === questions[currentQuestionIndex].correct) {
+                score++;
+            }
+            currentQuestionIndex++;
+
+            if (currentQuestionIndex < questions.length) {
+                showQuestion();
+            } else {
+                endQuiz();
+            }
+        }
+
+        function endQuiz() {
+            document.getElementById("quiz").style.display = "none";
+            document.getElementById("result").style.display = "block";
+            document.getElementById("score").textContent = score;
+            document.getElementById("restart").style.display = "block";
+        }
+
+        startQuiz();
+       // Gérer le changement de thème (mode clair/sombre)
+        document.getElementById('theme-toggle').addEventListener('click', function() {
+            document.body.classList.toggle('light-theme');
+            
+            // Changer le texte du bouton selon le thème actif
+            if (document.body.classList.contains('light-theme')) {
+                document.getElementById('theme-toggle').textContent = '🌙 Mode Sombre';
+            } else {
+                document.getElementById('theme-toggle').textContent = '☀️ Mode Clair';
+            }
+        });
+    </script>
+</body>
+</html>
